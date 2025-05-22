@@ -27,5 +27,14 @@ services:
       - ./backend:/app
     command: npm run start:dev
 
+  frontend:
+    build: ./frontend
+    container_name: tyma_frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+
 volumes:
   postgres_data:

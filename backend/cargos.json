@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1, 
+        "name": "Nombre del Cargo",
+        "description": "Descripcion del Cargo",
+        "department": "ID DEPARTAMENTO CARGO",
+        "manager": "ID JEFATURA CARGO",
+        "yearsOfExperience": "2",
+        "education": "Educacion requerida",
+        "competencies": "Competencias",
+        "functions": "Funciones",
+        "authority": "Nivel autoridad (0, 1, 2) (bajo medio alto)",
+        "authorityDescription": "Descripcion de autoridad"
+    },
+    {
+        "id": 2, 
+        "name": "Nombre del Cargo",
+        "description": "Descripcion del Cargo",
+        "department": "ID DEPARTAMENTO CARGO",
+        "manager": "ID JEFATURA CARGO",
+        "yearsOfExperience": "2",
+        "education": "Educacion requerida",
+        "competencies": "Competencias",
+        "functions": "Funciones",
+        "authority": "Nivel autoridad (0, 1, 2) (bajo medio alto)",
+        "authorityDescription": "Descripcion de autoridad"
+    },
+    {
+        "id": 3, 
+        "name": "Nombre del Cargo",
+        "description": "Descripcion del Cargo",
+        "department": "ID DEPARTAMENTO CARGO",
+        "manager": "ID JEFATURA CARGO",
+        "yearsOfExperience": "2",
+        "education": "Educacion requerida",
+        "competencies": "Competencias",
+        "functions": "Funciones",
+        "authority": "Nivel autoridad (0, 1, 2) (bajo medio alto)",
+        "authorityDescription": "Descripcion de autoridad"
+    }
+]

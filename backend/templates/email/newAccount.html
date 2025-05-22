@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta Creada</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .email-container {
+            width: 100%;
+            background-color: #f4f4f4;
+            padding: 20px 0;
+        }
+
+        .email-content {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .header {
+            background-color: #00437c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .body {
+            padding: 30px 20px;
+        }
+
+        .body h2 {
+            color: #00437c;
+        }
+
+        .info {
+            margin: 20px 0;
+        }
+
+        .info p {
+            margin: 5px 0;
+        }
+
+        .footer {
+            background-color: #e0e0e0;
+            text-align: center;
+            padding: 15px;
+            font-size: 12px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+        <div class="email-content">
+            <!-- Encabezado -->
+            <div class="header" style="text-align: center; background-color: #00437c; padding: 20px;">
+                <img src="https://www.constructoraelsauce.cl/resources/media/elsauce/logo_transp_white.png"
+                    alt="App Sauce" style="max-width: 400px; height: auto;">
+            </div>
+            <!-- Cuerpo -->
+            <div class="body">
+                <h2>Cuenta Creada Exitosamente</h2>
+                <p>Nos alegra informarte que su cuenta ha sido creada con éxito. Aquí están los detalles:
+                </p>
+                <div class="info">
+                    <p><strong>RUT:</strong> {{user_rut}}</p>
+                    <p><strong>Email:</strong> {{user_mail}}</p>
+                    <p><strong>Nombre:</strong> {{user_name}}</p>
+                </div>
+                <p>Su contraseña temporal es: <strong>{{user_password}}</strong></p>
+                <p style="text-align: center; margin: 30px 0;">
+                    <a href="https://app.sauce.cl" target="_blank"
+                        style="display: inline-block; padding: 12px 24px; background-color: #00437c; color: #ffffff; text-decoration: none; border-radius: 4px; font-weight: bold;">
+                        Ir a la Plataforma
+                    </a>
+                </p>
+            </div>
+            <!-- Pie de página -->
+            <div class="footer">
+                &copy; 2025 Constructora El Sauce. Todos los derechos reservados.<br>
+                Puedes personalizar este pie con enlaces o información de contacto.
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

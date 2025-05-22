@@ -1,0 +1,13 @@
+FROM node:20
+
+WORKDIR /app
+
+COPY package*.json ./
+
+# Install inside the Linux container, not Windows
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+CMD ["npm", "run", "start:dev"]

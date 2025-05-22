@@ -1,20 +1,21 @@
 import { Body, Controller, Get, Param, Post, Put, Req } from "@nestjs/common";
 import { SaleService } from "./sale.service";
 import PushProductDto from "dto/pushProduct.dto";
+import { Sale } from "./sale.entity";
 
 @Controller("sale")
 export class SaleController {
   constructor(private readonly saleService: SaleService) {}
 
   @Post()
-  async createSale(@Req() req, @Body() dto: PushProductDto): Promise<any> {
+  async createSale(@Req() req, @Body() dto: PushProductDto): Promise<Sale> {
     const user = req.user;
 
     return this.saleService.createSale(dto, user ?? null);
   }
 
   @Put(':saleId')
-  async pushProduct(@Req() req, @Param() saleId: number, @Body() dto: PushProductDto): Promise<any> {
+  async pushProduct(@Req() req, @Param('saleId') saleId: number, @Body() dto: PushProductDto): Promise<Sale> {
     const user = req.user;
     return this.saleService.pushProduct(saleId, dto, user ?? null);
   }
@@ -33,17 +34,17 @@ export class SaleController {
   }
 
   @Get(':saleId')
-  async getSale(@Param() saleId: number): Promise<any> {
+  async getSale(@Param('saleId') saleId: number): Promise<any> {
     return this.saleService.getSale(saleId);
   }
 
   @Get('transbank/:saleId')
-  async getTransbank(@Param() saleId: number): Promise<any> {
+  async getTransbank(@Param('saleId') saleId: number): Promise<any> {
     return this.saleService.getTransbank(saleId);
   }
   
   @Get('callback/:saleId')
-  async getCallback(@Param() saleId: number, @Req() req): Promise<any> {
+  async getCallback(@Param('saleId') saleId: number, @Req() req): Promise<any> {
     console.log("Callback:", req);
     return this.saleService.getCallback(saleId, "aaa");
   }

@@ -55,14 +55,16 @@ export class SaleService {
       where: {
         id: saleId
       },
-      relations: ["items"]
+      relations: ["items", "items.product"]
     });
-
+    
     if (!sale) {
       throw new Error("Sale not found");
     }
 
-    let saleItem = sale.items.find(item => item.product.id === dto.itemId);
+    let saleItem = sale.items.find((item) => {
+      return item.product.id === dto.itemId
+    });
 
     if (!saleItem) {
       const product = await this.productRepository.findOne({
@@ -83,7 +85,7 @@ export class SaleService {
 
       sale.items.push(saleItem);
     } else {
-      saleItem.quantity += dto.quantity;
+      saleItem.quantity = dto.quantity;
     }
 
     sale.total = sale.items.reduce((total, item) => total + (item.priceAtPurchase * item.quantity), 0);

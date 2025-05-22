@@ -31,9 +31,10 @@ export class UserService {
     user.surnames = dto.surnames;
     user.email = dto.email;
 
-    const pw = this.generateSecurePassword(12);
-    user.password = await User.hashPassword(pw);
-
+    //const pw = this.generateSecurePassword(12);
+    //user.password = await User.hashPassword(pw);
+    user.password = await User.hashPassword(dto.password);
+    
     await this.emailService.sendTemplateEmail(
       [user.email],
       "Bienvenido a la App Sauce",
@@ -44,10 +45,10 @@ export class UserService {
         user_rut: `${user.rut}-${user.dv}`,
         user_mail: user.email,
         user_name: `${user.names} ${user.surnames}`,
-        user_password: pw
+        user_password: dto.password
       }
     );
-    user.requiresPasswordReset = true;
+    user.requiresPasswordReset = false;
 
     return this.userRepository.save(user);
   }

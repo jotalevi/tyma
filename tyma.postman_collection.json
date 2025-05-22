@@ -1,0 +1,612 @@
+{
+	"info": {
+		"_postman_id": "b31e1b67-3feb-4a1b-93e9-29c944a5e6d1",
+		"name": "tyma",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39603330"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "rut",
+									"value": "25535866",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Roma_2022@",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3010/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "rut",
+									"value": "25535866",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3010/auth/forgot-password",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3010/auth/change-password",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"auth",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"rut\": 25535866,\r\n  \"dv\": \"9\",\r\n  \"names\": \"Eros Jose\",\r\n  \"surnames\": \"Talevi Neto\",\r\n  \"email\": \"talevineto@gmail.com\",\r\n  \"password\": \"Roma_2022@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3010/user/",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3010/user/",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "me",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3010/user/me",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pending-reset/:rut",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3010/user/pending-reset/:rut",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"user",
+								"pending-reset",
+								":rut"
+							],
+							"variable": [
+								{
+									"key": "rut",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3010/user/:rut",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"user",
+								":rut"
+							],
+							"variable": [
+								{
+									"key": "rut",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put/:rut",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:3010/user/:rut",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"user",
+								":rut"
+							],
+							"variable": [
+								{
+									"key": "rut",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "activate/:rut",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:3010/user/activate/:rut",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"user",
+								"activate",
+								":rut"
+							],
+							"variable": [
+								{
+									"key": "rut",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Product One\",\r\n  \"description\": \"This is Another Product\",\r\n  \"price\": 72990,\r\n  \"stock\": 500,\r\n  \"imageB64\": \"ANASOJDAKSJD\",\r\n  \"category\": \"TESTPRODUCTS\",\r\n  \"isAvailable\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3010/product/",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3010/product/",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get/:id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3010/product/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"product",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "204293"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Product One\",\r\n  \"description\": \"This is the first product ever\",\r\n  \"price\": 69420,\r\n  \"stock\": 50135,\r\n  \"imageB64\": \"IMAGE\",\r\n  \"category\": \"TESTPRODUCTS\",\r\n  \"isAvailable\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3010/product/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"product",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sale",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"itemId\": 204293,\r\n  \"quantity\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3010/sale/",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"sale",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put/:saleId",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"itemId\": 1,\r\n  \"quantity\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3010/sale/:saleId",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"sale",
+								":saleId"
+							],
+							"variable": [
+								{
+									"key": "saleId",
+									"value": "204294"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3010/sale/",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"sale",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get/:saleId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3010/sale/:saleId",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"sale",
+								":saleId"
+							],
+							"variable": [
+								{
+									"key": "saleId",
+									"value": "204291"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transbank/:saleId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3010/sale/transbank/:saleId",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"sale",
+								"transbank",
+								":saleId"
+							],
+							"variable": [
+								{
+									"key": "saleId",
+									"value": "204294"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "callback/:saleId",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3010/sale/callback/:saleId",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"sale",
+								"callback",
+								":saleId"
+							],
+							"variable": [
+								{
+									"key": "saleId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3010/health",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI1NTM1ODY2LCJlbWFpbCI6InRhbGV2aW5ldG8rMjU1MzU4NjZAZ21haWwuY29tIiwiaWF0IjoxNzQ3OTQwNzAzLCJleHAiOjE3NDc5NDQzMDN9.Rlc89osWs6jY0oEuyf1bkCbZnX1Lw4NBwSbiZUqEqJA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

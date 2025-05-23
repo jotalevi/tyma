@@ -9,7 +9,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #F8F5F0;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,6 +17,11 @@
   -moz-osx-font-smoothing: grayscale;
 
   --radius: 4px;
+
+  width: 100%;
+  height: 100%;
+  margin: 0 ;
+  padding: 0;
 }
 
 a {
@@ -29,11 +34,21 @@ a:hover {
 }
 
 body {
-  margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -60,10 +75,21 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+#hover-link-color {
+  transition: all 0.25s ease-in-out;
+  color: white;
+  text-decoration: none;
+}
+
+#hover-link-color :hover {
+  transition: all 0.25s ease-in-out;
+  color: #504444;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: #F8F5F0;
   }
   a:hover {
     color: #747bff;
@@ -71,4 +97,138 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* Remove Arrows/Spinners */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.slider {
+  width: calc(100% - 20px); 
+  margin-left: 10px ;
+  margin-right: 10px ;
+}
+
+.slider {
+    height: 6px;
+    position: relative;
+    background: #a0a09f7c;
+    border-radius: 5px;
+}
+
+.slider .price-slider {
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    background: #504444;
+}
+
+.range-input {
+    position: relative;
+}
+
+.range-input input {
+    position: absolute;
+    width: calc(100% - 20px); 
+    margin-left: 10px ;
+    margin-right: 10px ;
+    height: 5px;
+    background: none;
+    top: -5px;
+    pointer-events: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+/* Styles for the range thumb in WebKit browsers */
+input[type="range"]::-webkit-slider-thumb {
+    height: 18px;
+    width: 18px;
+    border-radius: 70%;
+    background: #4B5563;
+    pointer-events: auto;
+    -webkit-appearance: none;
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        width: 80%;
+        margin-right: 5px;
+    }
+
+    .custom-wrapper {
+        width: 100%;
+        left: 0;
+        padding: 0 10px;
+    }
+
+    .projtitle {
+        width: 100%;
+        position: relative;
+        right: 26px;
+    }
+
+    .price-input {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .price-field {
+        margin-bottom: 10px;
+    }
+}
+
+.productCard {
+  transition: all 0.25s ease-in-out;
+  width: 155px;
+  height: 200px;
+  background-color: white;
+  border-radius: 14px;
+  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.3);
+  color: #000000; 
+}
+
+.productCard:hover {
+  transition: all 0.25s ease-in-out;
+  width: 155px;
+  height: 200px;
+  background-color: white;
+  border-radius: 14px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  color: #000000;
+}
+
+.wrapImages {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.imageBox {
+  position: absolute;
+  border-radius: 14px 14px 0px 0px;
+  transition: all 0.2s ease-in-out;
+}
+
+.fullImage {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: 14px 14px 0px 0px;
+}
+
+.smallImage {
+  width: 52px;
+  height: 52px;
+  bottom: 5px;
+  right: 5px;
+  top: auto;
+  left: auto;
+  z-index: 2;
+  border-radius: 4px;
 }
